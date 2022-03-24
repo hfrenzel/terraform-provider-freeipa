@@ -2,7 +2,7 @@ module github.com/camptocamp/terraform-provider-freeipa
 
 go 1.12
 
-replace github.com/tehwalris/go-freeipa => github.com/camptocamp/go-freeipa v0.0.0-20200408154013-bc9bd4dc80cf
+replace github.com/tehwalris/go-freeipa => github.com/dickens7/go-freeipa v1.1.0-dickens7
 
 require (
 	github.com/hashicorp/terraform-plugin-sdk v1.7.0

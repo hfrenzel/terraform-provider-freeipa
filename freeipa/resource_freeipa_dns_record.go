@@ -62,7 +62,7 @@ func resourceFreeIPADNSRecordCreate(d *schema.ResourceData, meta interface{}) er
 	}
 
 	idnsname := d.Get("idnsname").(string)
-	dnszoneidnsname := d.Get("dnszoneidnsname")
+	dnszoneidnsname := d.Get("dnszoneidnsname").(string)
 
 	args := ipa.DnsrecordAddArgs{
 		Idnsname: idnsname,
@@ -132,7 +132,7 @@ func resourceFreeIPADNSRecordUpdate(d *schema.ResourceData, meta interface{}) er
 		Idnsname: d.Get("idnsname").(string),
 	}
 
-	dnszoneidnsname := d.Get("dnszoneidnsname")
+	dnszoneidnsname := d.Get("dnszoneidnsname").(string)
 	optArgs := ipa.DnsrecordModOptionalArgs{
 		Dnszoneidnsname: &dnszoneidnsname,
 	}
@@ -194,7 +194,7 @@ func resourceFreeIPADNSRecordRead(d *schema.ResourceData, meta interface{}) erro
 		Idnsname: d.Get("idnsname").(string),
 	}
 
-	dnszoneidnsname := d.Get("dnszoneidnsname")
+	dnszoneidnsname := d.Get("dnszoneidnsname").(string)
 	all := true
 	optArgs := ipa.DnsrecordShowOptionalArgs{
 		Dnszoneidnsname: &dnszoneidnsname,
@@ -266,7 +266,7 @@ func resourceFreeIPADNSRecordDelete(d *schema.ResourceData, meta interface{}) er
 		Idnsname: d.Get("idnsname").(string),
 	}
 
-	dnszoneidnsname := d.Get("dnszoneidnsname")
+	dnszoneidnsname := d.Get("dnszoneidnsname").(string)
 	optArgs := ipa.DnsrecordDelOptionalArgs{
 		Dnszoneidnsname: &dnszoneidnsname,
 	}
