@@ -39,10 +39,12 @@ func Provider() terraform.ResourceProvider {
 			"freeipa_host":       resourceFreeIPAHost(),
 			"freeipa_dns_record": resourceFreeIPADNSRecord(),
 			"freeipa_user":       resourceFreeIPAUser(),
+			"freeipa_group":      resourceFreeIPAGroup(),
 		},
 
 		DataSourcesMap: map[string]*schema.Resource{
-			"freeipa_user": dataFreeIPAUser(),
+			"freeipa_user":  dataFreeIPAUser(),
+			"freeipa_group": dataFreeIPAGroup(),
 		},
 
 		ConfigureFunc: providerConfigure,
